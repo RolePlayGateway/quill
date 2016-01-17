@@ -1,0 +1,30 @@
+{
+  "name": "roleplaygateway",
+  "version": "0.1.0",
+  "description": "collaborative fiction-writing platform.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/martindale/roleplaygateway.git"
+  },
+  "keywords": [
+    "roleplay",
+    "writing",
+    "cms",
+    "maki"
+  ],
+  "author": "Eric Martindale",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/martindale/roleplaygateway/issues"
+  },
+  "homepage": "https://github.com/martindale/roleplaygateway",
+  "dependencies": {
+    "maki": "git://github.com/martindale/maki",
+    "maki-auth-simple": "^0.1.1",
+    "maki-passport-local": "0.0.4"
+  }
+}
