@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/martindale/roleplaygateway",
   "dependencies": {
-    "maki": "git://github.com/martindale/maki",
+    "maki": "git://github.com/martindale/maki#polymer",
     "maki-auth-simple": "^0.1.1",
     "maki-passport-local": "0.0.4"
   }
