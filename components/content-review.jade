@@ -1,0 +1,47 @@
+dom-module#content-review
+  template
+    .ui.modal#content-review-modal
+      i.close.icon
+      .header Review Content
+      .content
+        .description
+          h3 You're about to delete the following post.
+          .text {{content.text}}
+          h4 Sometimes, posts have extra data, like the original chat message that generated them.  If this exists, it is below.
+          .text {{message.text}} 
+      .actions.labeled
+        .ui.button.cancel Cancel
+        .ui.button.approve(on-tap="_executeDeletion")
+          i.icon.remove
+          | Delete this post permanently
+          
+  style(src="/semantic/dist/semantic.min.css")
+  script(src="/semantic/dist/semantic.min.js")
+  script.
+    Polymer({
+      is: 'content-review',
+      properties: {
+        id: { type: Number },
+        content: { type: Object },
+        message: { type: Object }
+      },
+      _executeDeletion: function() {
+        var self = this;
+        $.ajax({
+          type: 'DELETE',
+          url: '/content/' + self.id,
+          success: function(data) {
+            console.log('DELETE success:', data);
+          }
+        });
+      },
+      attached: function() {
+        var self = this;
+        // TODO: switch to _retrieve
+        $.getJSON('/content/' + self.id, function(context) {
+          self.content = context.content;
+          self.message = context.message;
+          $('#content-review-modal').show();
+        });
+      }
+    });
