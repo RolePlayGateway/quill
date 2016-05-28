@@ -1,2 +1,3 @@
-# roleplaygateway
-source code for roleplaygateway.com
+Quill
+=====
+The collaborative fiction-writing platform.
